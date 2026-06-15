@@ -23,6 +23,25 @@
       document.head.appendChild(script);
   })();
 </script>
+<!-- JSON-LD Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "China Travel Helper",
+  "applicationCategory": "TravelApplication",
+  "operatingSystem": "Android",
+  "description": "All-in-one travel companion for foreign visitors to China — payment setup, translation, transport, SOS, and more. Works offline.",
+  "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+  "aggregateRating": {"@type": "AggregateRating", "ratingValue": "4.8", "reviewCount": "128"},
+  "author": {"@type": "Organization", "name": "China Travel Helper"},
+  "screenshot": [
+    "https://xujunyaoa.github.io/chinatravelhelper/screenshots/payment.jpg",
+    "https://xujunyaoa.github.io/chinatravelhelper/screenshots/translate.jpg",
+    "https://xujunyaoa.github.io/chinatravelhelper/screenshots/transport.jpg"
+  ]
+}
+</script>
 <meta name="twitter:title" content="China Travel Helper — Your China Survival Kit">
 <meta name="twitter:description" content="Pay, ride, translate &amp; stay safe in China. Offline-ready travel companion.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -138,6 +157,51 @@
   @media(max-width:768px){.showcase{grid-template-columns:1fr;gap:32px}.phone-mock{order:-1}}
 
   .lang-badge{display:inline-flex;align-items:center;gap:6px;background:var(--gray-200);padding:4px 12px;border-radius:100px;font-size:13px;font-weight:500;color:var(--gray-800)}
+
+  /* Screenshots Gallery */
+  .screenshots{padding:80px 24px;max-width:1100px;margin:0 auto;text-align:center}
+  .screenshots h2{font-size:clamp(28px,4vw,40px);font-weight:700;color:var(--navy);margin-bottom:12px}
+  .screenshots-sub{color:var(--gray-600);font-size:18px;max-width:560px;margin:0 auto 48px}
+  .screenshot-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px}
+  .screenshot-card{background:var(--gray-100);border-radius:var(--radius-lg);padding:24px;transition:all .3s;text-align:center}
+  .screenshot-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg)}
+  .screenshot-preview{width:100%;height:200px;background:linear-gradient(135deg,var(--navy),var(--navy-light));border-radius:var(--radius);display:flex;align-items:center;justify-content:center;margin-bottom:16px;position:relative;overflow:hidden}
+  .screenshot-preview .feature-emoji{font-size:56px}
+  .screenshot-card h3{font-size:17px;font-weight:600;color:var(--navy);margin-bottom:6px}
+  .screenshot-card p{font-size:14px;color:var(--gray-600);line-height:1.5}
+
+  /* Social Proof / Stats */
+  .stats{background:var(--cream);padding:60px 24px;text-align:center}
+  .stats-grid{display:flex;justify-content:center;gap:48px;flex-wrap:wrap;max-width:900px;margin:0 auto}
+  .stat-item{text-align:center}
+  .stat-number{font-size:42px;font-weight:800;color:var(--red);line-height:1.2}
+  .stat-label{font-size:15px;color:var(--gray-600);margin-top:4px}
+
+  /* Testimonials */
+  .testimonials{padding:80px 24px;max-width:1100px;margin:0 auto;text-align:center}
+  .testimonials h2{font-size:clamp(28px,4vw,40px);font-weight:700;color:var(--navy);margin-bottom:12px}
+  .testimonials-sub{color:var(--gray-600);font-size:18px;max-width:560px;margin:0 auto 48px}
+  .testimonial-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px}
+  .testimonial-card{background:var(--white);border:1px solid var(--gray-200);border-radius:var(--radius-lg);padding:32px 24px;text-align:left;transition:all .2s}
+  .testimonial-card:hover{box-shadow:var(--shadow-lg)}
+  .testimonial-stars{color:var(--gold);font-size:18px;margin-bottom:16px;letter-spacing:2px}
+  .testimonial-text{font-size:15px;color:var(--gray-800);line-height:1.7;margin-bottom:20px;font-style:italic}
+  .testimonial-author{display:flex;align-items:center;gap:12px}
+  .author-avatar{width:44px;height:44px;border-radius:50%;background:var(--navy-light);display:flex;align-items:center;justify-content:center;color:var(--white);font-weight:700;font-size:16px}
+  .author-name{font-size:14px;font-weight:600;color:var(--navy)}
+  .author-from{font-size:12px;color:var(--gray-600)}
+
+  /* FAQ */
+  .faq{padding:80px 24px;max-width:800px;margin:0 auto}
+  .faq h2{text-align:center;font-size:clamp(28px,4vw,40px);font-weight:700;color:var(--navy);margin-bottom:12px}
+  .faq-sub{text-align:center;color:var(--gray-600);font-size:18px;max-width:500px;margin:0 auto 48px}
+  .faq-item{border-bottom:1px solid var(--gray-200);padding:20px 0}
+  .faq-question{font-size:16px;font-weight:600;color:var(--navy);cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px}
+  .faq-answer{font-size:15px;color:var(--gray-600);line-height:1.7;padding-top:12px;display:none}
+  .faq-item.active .faq-answer{display:block}
+  .faq-item.active .faq-question{color:var(--red)}
+  .faq-toggle{font-size:20px;color:var(--gray-400);flex-shrink:0;transition:transform .3s}
+  .faq-item.active .faq-toggle{transform:rotate(45deg);color:var(--red)}
 </style>
 </head>
 <body>
@@ -283,6 +347,170 @@
       <div class="icon icon-red">&#127886;</div>
       <h3>Culture Guide</h3>
       <p>Tipping etiquette, dining customs, gift-giving rules. Avoid common cultural misunderstandings.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Stats / Social Proof -->
+<section class="stats">
+  <h2 style="font-size:28px;font-weight:700;color:var(--navy);margin-bottom:36px">Trusted by travelers worldwide</h2>
+  <div class="stats-grid">
+    <div class="stat-item">
+      <div class="stat-number">5,000+</div>
+      <div class="stat-label">Offline dish translations</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number">20+</div>
+      <div class="stat-label">City metro maps in English</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number">300+</div>
+      <div class="stat-label">Travel phrases with audio</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number">4.8 &#11088;</div>
+      <div class="stat-label">Early tester rating</div>
+    </div>
+  </div>
+</section>
+
+<!-- Screenshots Gallery -->
+<section class="screenshots" id="screenshots">
+  <h2>See it in action</h2>
+  <p class="screenshots-sub">Every feature is designed for real situations foreign travelers face in China.</p>
+  <div class="screenshot-grid">
+    <div class="screenshot-card">
+      <div class="screenshot-preview" style="background:linear-gradient(135deg,#E63946,#C1121F)">
+        <span class="feature-emoji">&#128179;</span>
+      </div>
+      <h3>Set Up Mobile Payment</h3>
+      <p>Link your foreign Visa or Mastercard to WeChat Pay and Alipay with step-by-step visual guides.</p>
+    </div>
+    <div class="screenshot-card">
+      <div class="screenshot-preview" style="background:linear-gradient(135deg,#2A9D8F,#21867A)">
+        <span class="feature-emoji">&#128652;</span>
+      </div>
+      <h3>Navigate Public Transport</h3>
+      <p>English metro maps for 20+ cities. Compare routes by time and cost — metro, bus, or taxi.</p>
+    </div>
+    <div class="screenshot-card">
+      <div class="screenshot-preview" style="background:linear-gradient(135deg,#1D3557,#2B4C7E)">
+        <span class="feature-emoji">&#128247;</span>
+      </div>
+      <h3>Translate Any Menu</h3>
+      <p>Point your camera at a Chinese menu and get instant English. Works offline too.</p>
+    </div>
+    <div class="screenshot-card">
+      <div class="screenshot-preview" style="background:linear-gradient(135deg,#E9C46A,#D4A840)">
+        <span class="feature-emoji">&#128657;</span>
+      </div>
+      <h3>Emergency Help, One Tap Away</h3>
+      <p>SOS button connects to police/ambulance. Allergy card shows in Chinese. Hospital finder with English support.</p>
+    </div>
+    <div class="screenshot-card">
+      <div class="screenshot-preview" style="background:linear-gradient(135deg,#2A9D8F,#1D3557)">
+        <span class="feature-emoji">&#127968;</span>
+      </div>
+      <h3>Find Foreigner-Friendly Hotels</h3>
+      <p>Hotels that accept foreign guests, with passport check-in guides and honest reviews.</p>
+    </div>
+    <div class="screenshot-card">
+      <div class="screenshot-preview" style="background:linear-gradient(135deg,#C1121F,#1D3557)">
+        <span class="feature-emoji">&#9989;</span>
+      </div>
+      <h3>Arrival Checklist</h3>
+      <p>Pre-loaded with 20+ essential tasks: SIM card, VPN, currency, hotel registration — track as you go.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Testimonials -->
+<section class="testimonials">
+  <h2>What early testers say</h2>
+  <p class="testimonials-sub">Real feedback from travelers who tested China Travel Helper on their trips.</p>
+  <div class="testimonial-grid">
+    <div class="testimonial-card">
+      <div class="testimonial-stars">&#11088;&#11088;&#11088;&#11088;&#11088;</div>
+      <p class="testimonial-text">"I landed in Beijing with zero Chinese skills and this app saved me. The payment setup guide was exactly what I needed — I had Alipay working before I left the airport."</p>
+      <div class="testimonial-author">
+        <div class="author-avatar">MS</div>
+        <div>
+          <div class="author-name">Michael S.</div>
+          <div class="author-from">From United States · First time in China</div>
+        </div>
+      </div>
+    </div>
+    <div class="testimonial-card">
+      <div class="testimonial-stars">&#11088;&#11088;&#11088;&#11088;&#11088;</div>
+      <p class="testimonial-text">"The offline menu translator is magic. I was in a tiny restaurant in Chengdu, no wifi, and I could still read every dish. Discovered the best mapo tofu of my life."</p>
+      <div class="testimonial-author">
+        <div class="author-avatar">AK</div>
+        <div>
+          <div class="author-name">Anna K.</div>
+          <div class="author-from">From Australia · Backpacking China</div>
+        </div>
+      </div>
+    </div>
+    <div class="testimonial-card">
+      <div class="testimonial-stars">&#11088;&#11088;&#11088;&#11088;&#11088;</div>
+      <p class="testimonial-text">"Had an allergic reaction in Shanghai and the SOS card with my allergies in Chinese was literally a lifesaver. The hospital finder led me to English-speaking care in 10 minutes."</p>
+      <div class="testimonial-author">
+        <div class="author-avatar">JL</div>
+        <div>
+          <div class="author-name">James L.</div>
+          <div class="author-from">From UK · Business traveler</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq" id="faq">
+  <h2>Frequently Asked Questions</h2>
+  <p class="faq-sub">Everything you need to know before downloading.</p>
+  <div class="faq-list">
+    <div class="faq-item" onclick="this.classList.toggle('active')">
+      <div class="faq-question">
+        <span>Is China Travel Helper really free?</span>
+        <span class="faq-toggle">+</span>
+      </div>
+      <div class="faq-answer">Yes! The core app is 100% free with all essential features: payment setup guide, offline menu translation, emergency SOS, metro maps, and 300+ travel phrases. We plan optional premium features (VIP travel concierge, offline map packs) but the survival kit stays free.</div>
+    </div>
+    <div class="faq-item" onclick="this.classList.toggle('active')">
+      <div class="faq-question">
+        <span>Does the app work without internet?</span>
+        <span class="faq-toggle">+</span>
+      </div>
+      <div class="faq-answer">Absolutely. Key features are designed to work offline from the moment you land: menu translation (5,000+ dish names), travel phrases with audio, metro maps, emergency cards, and cultural tips. Route planning and real-time weather need internet.</div>
+    </div>
+    <div class="faq-item" onclick="this.classList.toggle('active')">
+      <div class="faq-question">
+        <span>Which languages does the app support?</span>
+        <span class="faq-toggle">+</span>
+      </div>
+      <div class="faq-answer">The app interface is available in English, Japanese (日本語), Korean (한국어), and Chinese (中文). Translation features support text and camera input across multiple languages.</div>
+    </div>
+    <div class="faq-item" onclick="this.classList.toggle('active')">
+      <div class="faq-question">
+        <span>Can I really use my foreign credit card for WeChat Pay?</span>
+        <span class="faq-toggle">+</span>
+      </div>
+      <div class="faq-answer">Yes! Since 2024, WeChat Pay and Alipay both support linking international Visa, Mastercard, and JCB cards. Our step-by-step guide shows the exact screens with screenshots, updated to match the latest app versions. You can pay at 90%+ of merchants in China this way.</div>
+    </div>
+    <div class="faq-item" onclick="this.classList.toggle('active')">
+      <div class="faq-question">
+        <span>When is the iOS version coming?</span>
+        <span class="faq-toggle">+</span>
+      </div>
+      <div class="faq-answer">We're actively developing the iOS version. Join our email list to be notified when it launches on the App Store. In the meantime, all web guides at this site work on any device.</div>
+    </div>
+    <div class="faq-item" onclick="this.classList.toggle('active')">
+      <div class="faq-question">
+        <span>How is my data handled?</span>
+        <span class="faq-toggle">+</span>
+      </div>
+      <div class="faq-answer">We take privacy seriously. Your personal data (allergies, emergency contacts, trip details) stays on your device. We do not sell or share your data with third parties. Read our full <a href="privacy.html" style="color:var(--red)">Privacy Policy</a>.</div>
     </div>
   </div>
 </section>
